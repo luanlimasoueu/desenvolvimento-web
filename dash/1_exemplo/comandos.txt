@@ -1,0 +1,5 @@
+virtualenv venv
+venv\Scripts\activate
+pip install dash
+pip install plotly
+pip install pandas
