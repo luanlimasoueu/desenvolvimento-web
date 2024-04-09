@@ -1,0 +1,63 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D86981;
+}
+
+.loading span {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 3px;
+    background-color: #F9DE6B;
+    border-radius: 50%;
+    animation: load 1s infinite alternate;
+}
+
+    .loading span:nth-of-type(2) {
+        background-color: #F1AE6B;
+        animation-delay: 0.2s;
+    }
+
+    .loading span:nth-of-type(3) {
+        background-color: #E87B6B;
+        animation-delay: 0.4s;
+    }
+
+    .loading span:nth-of-type(4) {
+        background-color: #DD496C;
+        animation-delay: 0.6s;
+    }
+
+    .loading span:nth-of-type(5) {
+        background-color: #C72F6C;
+        animation-delay: 0.8s;
+    }
+
+    .loading span:nth-of-type(6) {
+        background-color: #952B67;
+        animation-delay: 1s;
+    }
+
+    .loading span:nth-of-type(7) {
+        background-color: #642964;
+        animation-delay: 1.2s;
+    }
+
+@keyframes load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
