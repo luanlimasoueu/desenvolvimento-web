@@ -1,0 +1,12 @@
+https://www.youtube.com/watch?v=uhxiXOTKzfs
+virtualenv venv  
+venv/Scripts/Activate 
+pip install hvplot jupyterlab
+pip install panel
+jupyter lab
+
+panel serve jupyter_labs.ipynb
+
+venv/Scripts/deactivate
+
+

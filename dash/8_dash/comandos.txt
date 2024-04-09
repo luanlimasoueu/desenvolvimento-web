@@ -1,0 +1,8 @@
+https://www.youtube.com/watch?v=3f-j-PZ5N8A
+virtualenv venv  
+venv/Scripts/Activate 
+pip install -r requirements.txt
+
+Luciano ( Síndico)
+Daniela (Encarregada da Limpeza)
+Josimar( Amigo)

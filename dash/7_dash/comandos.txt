@@ -1,0 +1,6 @@
+https://www.youtube.com/watch?v=aS64PvDqCbU&t=2285s
+virtualenv venv  
+pip install dash
+pip install dash-bootstrap-components
+pip install jupyter-dash
+pip install openpyxl
