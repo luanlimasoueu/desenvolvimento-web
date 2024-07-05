@@ -1,0 +1,11 @@
+<h1> Hello </h1>
+<ul>
+ 
+{{ pessoa.id}} - {{ pessoa.nome}}
+ 
+</ul>
+<form action="{% url 'update' pessoa.id %}" method = "POST">
+    {% csrf_token %}
+    <input type="text" name = "nome" value="{{pessoa.nome}}">
+    <button type="submit">Update</button>
+</form>

@@ -1,0 +1,15 @@
+virtualenv venv
+django-admin startproject project_cad_usuarios
+cd project_cad_usuarios
+django-admin startapp app_cad_usuario
+
+python manage.py runserver
+
+
+python manage.py makemigrations
+python manage.py migrate
+
+
+deactivate
+
+Scripts/activate

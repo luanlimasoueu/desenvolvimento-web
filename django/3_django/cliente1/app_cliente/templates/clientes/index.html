@@ -1,0 +1,13 @@
+<h1> Hello </h1>
+<ul>
+    {% for pessoa in pessoas %}
+        <li> {{ pessoa.id}} - {{ pessoa.nome}}</li>
+        <a href="{% url 'editar' pessoa.id %}"> Editar </a>
+        <a href="{% url 'delete' pessoa.id %}"> Deletar </a>
+    {% endfor%}
+</ul>
+<form action="{% url 'salvar' %}" method = "POST">
+    {% csrf_token %}
+    <input type="text" name = "nome">
+    <button type="submit">Salvar</button>
+</form>

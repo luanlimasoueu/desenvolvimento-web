@@ -1,0 +1,25 @@
+virtualenv venv
+venv/Scripts/Activate
+
+pip install django
+
+django-admin startproject {project-name}
+django-admin startproject cliente1
+
+cd cliente1
+
+django-admin startapp {app-name}
+django-admin startapp app_cliente
+
+python manage.py runserver
+
+
+aplicadivos{
+
+app_cliente
+
+}
+
+python manage.py makemigrations
+
+python manage.py migrate

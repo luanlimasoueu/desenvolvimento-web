@@ -1,0 +1,13 @@
+.venv/Scripts/Activate
+pip install django
+django-admin startproject setup . 
+python manage.py runserver
+python manage.py startapp todos
+python manage.py migrate
+python manage.py makemigrations
+
+pip install python-decouple
+pip install dj-database-url
+https://www.youtube.com/watch?v=MsUL3Pgofl4
+
+.venv/Scripts/deactivate
