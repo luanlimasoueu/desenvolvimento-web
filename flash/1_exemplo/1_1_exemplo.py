@@ -10,9 +10,9 @@ def home():
 def blog():
     return 'This is the blog'
 
-@app.route ('/blog/<blog_id>')
+@app.route ('/blog/<string:blog_id>')
 def blog_id(blog_id):
-    return 'This is blog post number ' + str(blog_id)
+    return 'This is blog post number ' + blog_id
 
 
 if __name__ == '__main__':
