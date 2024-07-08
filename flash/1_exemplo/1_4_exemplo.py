@@ -8,7 +8,8 @@ def home():
 
 @app.route ('/blog')
 def blog():
-    return render_template('blog.html', author = "Luan", sunny= True)
+    posts = [{'title': 'Tecnologia'}, {'title': 'Produção'},]
+    return render_template('blog_2.html', author = "Luan", sunny= True, posts = posts)
 
 @app.route ('/blog/<string:blog_id>')
 def blog_id(blog_id):

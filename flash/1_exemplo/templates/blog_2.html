@@ -9,5 +9,12 @@
         {% else %}
         <p> Hoje temos chuva</p>
         {% endif %}
+
+        <p> Livros</p>
+
+        {% for post in posts %}
+        <h2> {{post.title }}</h2>
+        {% endfor%}
+
     </body>
 </html>
