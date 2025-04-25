@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Currículo com Linha do Tempo</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #34495e;
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+    }
+
+    .download-btn {
+      display: flex;
+      justify-content: center;
+      margin: 20px;
+    }
+
+    .download-btn button {
+      padding: 10px 20px;
+      background-color: #3498db;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 50px auto;
+      padding: 20px 0;
+    }
+
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: #3498db;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .entry {
+      padding: 20px;
+      position: relative;
+      width: 50%;
+      box-sizing: border-box;
+    }
+
+    .entry.left {
+      left: 0;
+    }
+
+    .entry.right {
+      left: 50%;
+    }
+
+    .entry::before {
+      content: '';
+      position: absolute;
+      top: 30px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: white;
+      border: 4px solid #3498db;
+      z-index: 1;
+    }
+
+    .entry.left::before {
+      right: -10px;
+    }
+
+    .entry.right::before {
+      left: -10px;
+    }
+
+    .content {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .content img {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid #ccc;
+      flex-shrink: 0;
+    }
+
+    .content .text {
+      flex-grow: 1;
+    }
+
+    .content h3 {
+      margin: 0 0 5px;
+      color: #2c3e50;
+    }
+
+    .content p {
+      margin: 2px 0;
+      color: #555;
+    }
+
+    @media screen and (max-width: 768px) {
+      .entry {
+        width: 100%;
+        padding-left: 40px;
+        padding-right: 25px;
+      }
+
+      .entry.right {
+        left: 0;
+      }
+
+      .timeline::after {
+        left: 20px;
+      }
+
+      .entry::before {
+        left: 14px;
+      }
+
+      .content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .content img {
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>João da Silva</h1>
+    <p>Currículo - Linha do Tempo Escolar e Profissional</p>
+  </header>
+
+  <div class="download-btn">
+    <button onclick="generatePDF()">📄 Baixar Currículo em PDF</button>
+  </div>
+
+  <div id="curriculo" class="timeline">
+
+    <div class="entry left">
+      <div class="content">
+        <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?crop=faces&fit=crop&h=450&w=450" alt="Foto Escola">
+        <div class="text">
+          <h3>Ensino Fundamental</h3>
+          <p>Escola Municipal São José</p>
+          <p>2005 - 2013</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry right">
+      <div class="content">
+        <img src="https://images.unsplash.com/photo-1590650516494-0c8e4a4a689b?crop=faces&fit=crop&h=450&w=450" alt="Foto Estágio">
+        <div class="text">
+          <h3>Estágio em Suporte Técnico</h3>
+          <p>InfoTech Solutions</p>
+          <p>2015 - 2016</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry left">
+      <div class="content">
+        <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?crop=faces&fit=crop&h=450&w=450" alt="Foto Colégio">
+        <div class="text">
+          <h3>Ensino Médio</h3>
+          <p>Colégio Estadual Dom Pedro II</p>
+          <p>2014 - 2016</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry right">
+      <div class="content">
+        <img src="https://images.unsplash.com/photo-1531497865142-4dc5a7f1a6ec?crop=faces&fit=crop&h=450&w=450" alt="Foto Desenvolvedor">
+        <div class="text">
+          <h3>Desenvolvedor Júnior</h3>
+          <p>DevCorp</p>
+          <p>2018 - 2020</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry left">
+      <div class="content">
+        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee7b?crop=faces&fit=crop&h=450&w=450" alt="Foto Faculdade">
+        <div class="text">
+          <h3>Graduação em Ciência da Computação</h3>
+          <p>Universidade Federal de XYZ</p>
+          <p>2017 - 2021</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="entry right">
+      <div class="content">
+        <img src="https://images.unsplash.com/photo-1581091870622-1e7d795b54d0?crop=faces&fit=crop&h=450&w=450" alt="Foto Analista">
+        <div class="text">
+          <h3>Analista de Sistemas</h3>
+          <p>AlphaSoft</p>
+          <p>2022 - atual</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function generatePDF() {
+      const element = document.getElementById('curriculo');
+      html2pdf().set({
+        margin: 0.5,
+        filename: 'curriculo_joao_silva.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+      }).from(element).save();
+    }
+  </script>
+
+</body>
+</html>
