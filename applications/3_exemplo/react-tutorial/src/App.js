@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Table from './Table'
+import Form from './Form'
 
 class App extends Component {
   // 1. We move the initial data array into the component's state
@@ -35,6 +36,10 @@ class App extends Component {
     })
   }
 
+  handleSubmit = (character) => {
+  this.setState({ characters: [...this.state.characters, character] })
+}
+
   // 3. render() now only has ONE variable named 'characters' pulled from state
   render() {
     const { characters } = this.state
@@ -42,6 +47,7 @@ class App extends Component {
     return (
       <div className="container">
         <Table characterData={characters} removeCharacter={this.removeCharacter} />
+        <Form handleSubmit={this.handleSubmit} />
       </div>
     )
   }
