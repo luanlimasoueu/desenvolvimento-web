@@ -1,0 +1,1 @@
+uvicorn 2_websockets:app --reload

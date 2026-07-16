@@ -1,0 +1,4 @@
+curl -X POST http://127.0.0.1:8000/webhook/payment \
+  -H "Content-Type: application/json" \
+  -H "Stripe-Signature: teste" \
+  -d '{"type": "payment_intent.succeeded", "data": {"id": "pi_123"}}'
